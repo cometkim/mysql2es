@@ -3,8 +3,8 @@
   "version": "3.11.4",
   "description": "fast mysql driver. Implements core protocol, prepared statements, ssl and compression in native JS",
   "main": "index.js",
-  "typings": "typings/mysql/index",
   "type": "commonjs",
+  "publishConfig": {},
   "scripts": {
     "lint": "npm run lint:docs && npm run lint:code",
     "lint:code": "eslint index.js promise.js index.d.ts promise.d.ts \"typings/**/*.ts\" \"lib/**/*.js\" \"test/**/*.{js,cjs,mjs,ts}\" \"benchmarks/**/*.js\"",
@@ -49,25 +49,15 @@
   ],
   "exports": {
     ".": "./index.js",
-    "./package.json": "./package.json",
-    "./promise": "./promise.js",
-    "./promise.js": "./promise.js"
+    "./package.json": "./package.json"
   },
   "engines": {
-    "node": ">= 8.0"
+    "node": ">= 18.0"
   },
   "author": "Andrey Sidorov <andrey.sidorov@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "aws-ssl-profiles": "^1.1.1",
-    "denque": "^2.1.0",
-    "generate-function": "^2.3.1",
-    "iconv-lite": "^0.6.3",
-    "long": "^5.2.1",
-    "lru.min": "^1.0.0",
-    "named-placeholders": "^1.1.3",
-    "seq-queue": "^0.0.5",
-    "sqlstring": "^2.3.2"
+    "flru": "^1.0.2"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
@@ -87,5 +77,6 @@
     "prettier": "^3.0.0",
     "progress": "^2.0.3",
     "typescript": "^5.0.2"
-  }
+  },
+  "packageManager": "yarn@4.5.1"
 }

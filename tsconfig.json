@@ -1,17 +1,16 @@
 {
-  "include": ["index.d.ts", "promise.d.ts", "typings"],
-  "exclude": ["node_modules", "test/tsc-build"],
   "compilerOptions": {
-    "target": "es2016",
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "allowImportingTsExtensions": true,
     "alwaysStrict": true,
     "noUnusedLocals": true,
-    "module": "commonjs",
     "declaration": true,
     "strict": true,
     "noImplicitAny": true,
-    "moduleResolution": "node",
     "removeComments": false,
     "noUnusedParameters": true,
-    "isolatedModules": true,
+    "isolatedModules": true
   }
 }

@@ -36,18 +36,26 @@
 [ci-url]: https://github.com/sidorares/node-mysql2/actions/workflows/ci-coverage.yml?query=branch%3Amaster
 [ci-image]: https://img.shields.io/github/actions/workflow/status/sidorares/node-mysql2/ci-coverage.yml?event=push&style=flat&label=CI&branch=master
 
-# MySQL2
-
-[![NPM Version][npm-image]][npm-url]
-[![NPM Downloads][downloads-image]][downloads-url]
-[![Node.js Version][node-version-image]][node-version-url]
-[![GitHub Workflow Status (with event)][ci-image]][ci-url]
-[![Codecov][coverage]][coverage-url]
-[![License][license-image]][license-url]
-
-[English][docs-base] | [简体中文][docs-base-zh-CN] | [Português (BR)][docs-base-pt-BR]
+# MySQL2 ES
 
 > MySQL client for Node.js with focus on performance. Supports prepared statements, non-utf8 encodings, binary log protocol, compression, ssl [much more][docs-documentation].
+
+**About this fork**
+
+This is fork of [node-mysql2](https://github.com/sidorares/node-mysql2), ported for ESM-first project compatibility.
+
+And there are more modifications:
+
+- Use promisified interface by default
+- Replace dependencies with native features as possible
+  - `long` -> native BigInt
+  - `bluebird` -> native Promise
+- Replace dependencies with better implementations
+  - `lru.min` -> [`flru`](https://github.com/lukeed/flru)
+- Embed old dependencies that are only provide CommonJS.
+  - `aws-ssl-profiles` -> `mysql2es/aws-ssl-profiles`
+
+Use this package as a drop-in replacement for the existing `mysql2/promise`.
 
 **Table of Contents**
 
